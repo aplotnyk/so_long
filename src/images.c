@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   images.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aplotnyk <aplotnyk@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aplotnyk <aplotnyk@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 11:41:06 by aplotnyk          #+#    #+#             */
-/*   Updated: 2024/02/25 22:19:59 by aplotnyk         ###   ########.fr       */
+/*   Updated: 2024/03/03 21:40:25 by aplotnyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,10 +69,12 @@ void	game_content(t_game *game)
 	s_y = (game->map->row_count - 1) * HEIGHT + 10;
 	put_img(game->mlx, game->map, game->all_imgs->wall_img, '1');
 	put_img(game->mlx, game->map, game->all_imgs->enemy_img, 'A');
-	put_img(game->mlx, game->map, game->all_imgs->collect_img, 'C');
 	put_img(game->mlx, game->map, game->all_imgs->e_open_img, 'E');
 	put_img(game->mlx, game->map, game->all_imgs->e_closed_img, 'E');
+	put_img(game->mlx, game->map, game->all_imgs->path_img, 'C');
+	put_img(game->mlx, game->map, game->all_imgs->collect_img, 'C');
 	put_img(game->mlx, game->map, game->all_imgs->path_img, '0');
+	put_img(game->mlx, game->map, game->all_imgs->path_img, 'P');
 	put_img(game->mlx, game->map, game->all_imgs->player_img, 'P');
 	game->moves_str = ft_strjoin("MushMoves - ", "0");
 	game->score_img = mlx_put_string(game->mlx, game->moves_str, s_x, 10);

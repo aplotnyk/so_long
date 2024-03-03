@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aplotnyk <aplotnyk@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aplotnyk <aplotnyk@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 17:33:34 by aplotnyk          #+#    #+#             */
-/*   Updated: 2024/02/25 21:22:51 by aplotnyk         ###   ########.fr       */
+/*   Updated: 2024/03/02 17:22:42 by aplotnyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,5 @@ int32_t	main(int argc, char **argv)
 	game_content(game);
 	mlx_key_hook(game->mlx, &ft_hooks, (void *) game);
 	mlx_loop(game->mlx);
-	mlx_terminate(game->mlx);
 	return (EXIT_SUCCESS);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aplotnyk <aplotnyk@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aplotnyk <aplotnyk@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 15:22:10 by aplotnyk          #+#    #+#             */
-/*   Updated: 2024/02/25 22:26:02 by aplotnyk         ###   ########.fr       */
+/*   Updated: 2024/03/01 20:55:33 by aplotnyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ char	**fill_map_array(int fd)
 		return (NULL);
 	prev_lines = NULL;
 	map_in_str = ft_strjoin("", new_line);
+	free(new_line);
 	while (true)
 	{
 		new_line = get_next_line(fd);
@@ -46,13 +47,8 @@ char	**load_map_content(char *mapname)
 	int		fd;
 
 	map_path = ft_strjoin("./map/", mapname);
-	if (map_path == NULL)
-		error_msg("Error: map_path is NULL.\n");
-	else
-	{
-		fd = open(map_path, O_RDONLY, 0444);
-		free(map_path);
-	}
+	fd = open(map_path, O_RDONLY, 0444);
+	free(map_path);
 	if (fd < 0)
 		error_msg("Error: Map not found in so_long/map.\n");
 	map_array = fill_map_array(fd);

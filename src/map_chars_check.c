@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_chars_check.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aplotnyk <aplotnyk@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aplotnyk <aplotnyk@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 04:27:33 by aplotnyk          #+#    #+#             */
-/*   Updated: 2024/02/25 23:30:54 by aplotnyk         ###   ########.fr       */
+/*   Updated: 2024/03/02 17:54:52 by aplotnyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ int	player_pos_check(char map_char, int x, int y, t_map *map)
 	return (0);
 }
 
-void	map_valid_chars_check(char **map_content, t_map	*map)
+void	map_valid_chars_check(char **map_content, t_map *map)
 {
 	int		x;
 	int		y;
@@ -88,8 +88,10 @@ void	map_valid_chars_check(char **map_content, t_map	*map)
 	int		exits;
 	int		collects;
 
-	exits = 0;
 	y = 0;
+	players = 0;
+	exits = 0;
+	collects = 0;
 	while (map_content[++y + 1] != NULL)
 	{
 		x = 0;
@@ -100,11 +102,8 @@ void	map_valid_chars_check(char **map_content, t_map	*map)
 			if (map_content[y][x] == 'E')
 				exits++;
 			else if (map_content[y][x] == 'C')
-				collects += 1;
+				collects++;
 		}
 	}
-	if (players != 1 || exits < 1)
-		error_msg("Error: Player is not unique or map contains no exits\n");
-	map->total_score = collects;
-	ft_putstr_fd("Map contains correct chars.\n", 1);
+	valid_chars_check_res(players, exits, collects, map);
 }

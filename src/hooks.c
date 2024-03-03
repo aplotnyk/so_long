@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   hooks.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aplotnyk <aplotnyk@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aplotnyk <aplotnyk@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 15:11:48 by aplotnyk          #+#    #+#             */
-/*   Updated: 2024/02/25 22:20:23 by aplotnyk         ###   ########.fr       */
+/*   Updated: 2024/03/03 21:58:03 by aplotnyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "solong.h"
 
-void	exit_check(t_game *game)
+void	score_exit_check(t_game *game)
 {
 	if (game->current_score == game->map->total_score)
 	{
@@ -38,20 +38,6 @@ void	arrow_key_pressed(mlx_key_data_t keydata, t_game *game)
 		down_move(game);
 }
 
-void	esc_pressed_termination(mlx_key_data_t keydata, t_game *game)
-{
-	if (keydata.key == MLX_KEY_ESCAPE && keydata.action == MLX_PRESS)
-	{
-		mlx_close_window(game->mlx);
-		mlx_terminate(game->mlx);
-		free_map(game->map->mapdata);
-		free(game->moves_str);
-		free(game->score_s);
-		ft_printf("ESC pressed, you've left the game\n");
-		exit(0);
-	}
-}
-
 void	ft_hooks(mlx_key_data_t keydata, void *param)
 {
 	t_game		*game;
@@ -59,6 +45,6 @@ void	ft_hooks(mlx_key_data_t keydata, void *param)
 	game = (t_game *) param;
 	esc_pressed_termination(keydata, game);
 	arrow_key_pressed(keydata, game);
-	exit_check(game);
+	score_exit_check(game);
 	print_header(game);
 }

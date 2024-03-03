@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   solong.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aplotnyk <aplotnyk@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aplotnyk <aplotnyk@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 17:35:06 by aplotnyk          #+#    #+#             */
-/*   Updated: 2024/02/25 23:39:51 by aplotnyk         ###   ########.fr       */
+/*   Updated: 2024/03/03 22:04:16 by aplotnyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,11 +91,11 @@ char				**load_map_content(char *mapname);
 char				**fill_map_array(int fd);
 
 //map_chars_check
-void				map_is_rectangular(char	**map_content, t_map *map);
+void				map_is_rectangular(char	**map_content, t_map *ma);
 void				map_walls_around(char **map_content);
 void				valid_char_scan(char map_char);
 int					player_pos_check(char map_char, int x, int y, t_map *map);
-void				map_valid_chars_check(char **map_content, t_map	*map);
+void				map_valid_chars_check(char **map_content, t_map *ma);
 
 //map_path_check
 void				map_valid_path_check(t_map	*map);
@@ -108,6 +108,7 @@ void				path_check(int y, int x, char **maparr,
 //utils
 int					free_map(char **map);
 int					free_imgs(t_game *game);
+void				valid_chars_check_res(int p, int e, int c, t_map *map);
 
 //images
 void				print_header(t_game *game);
@@ -120,18 +121,19 @@ void				put_img(mlx_t *mlx, t_map *map, mlx_image_t *img,
 
 //hooks
 void				ft_hooks(mlx_key_data_t keydata, void *param);
-void				esc_pressed_termination(mlx_key_data_t keydata,
-						t_game *game);
 void				arrow_key_pressed(mlx_key_data_t keydata, t_game *game);
-void				exit_check(t_game *game);
+void				score_exit_check(t_game *game);
 
 //moves
+void				collect_check(t_game *game);
 void				right_move(t_game *game);
 void				left_move(t_game *game);
 void				up_move(t_game *game);
 void				down_move(t_game *game);
 
 //close_game
+void				esc_pressed_termination(mlx_key_data_t keydata,
+						t_game *game);
 void				enemy_exit(t_game *game);
 void				final_exit(t_game *game);
 

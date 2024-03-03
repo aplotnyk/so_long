@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aplotnyk <aplotnyk@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aplotnyk <aplotnyk@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 15:09:49 by aplotnyk          #+#    #+#             */
-/*   Updated: 2024/02/25 20:14:59 by aplotnyk         ###   ########.fr       */
+/*   Updated: 2024/02/29 14:07:54 by aplotnyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,27 +107,57 @@
 // 	return (line);
 // }
 
+// char	*detect_line(int fd, char *bkm)
+// {
+// 	char	*buf;
+// 	int		nbytes_read;
+
+// 	nbytes_read = 1;
+// 	buf = malloc(sizeof(char) * (BUFFER_SIZE + 1));
+// 	if (!buf)
+// 		return (NULL);
+// 	while (nbytes_read > 0 && !ft_strchr(bkm, '\n'))
+// 	{
+// 		nbytes_read = read(fd, buf, BUFFER_SIZE);
+// 		if (nbytes_read == 0)
+// 			break ;
+// 		if (nbytes_read == -1)
+// 		{
+// 			free(buf);
+// 			return (NULL);
+// 		}
+// 		buf[nbytes_read] = '\0';
+// 		bkm = ft_strjoin(bkm, buf);
+// 	}
+// 	free(buf);
+// 	return (bkm);
+// }
+
 char	*detect_line(int fd, char *bkm)
 {
 	char	*buf;
+	char	*tmp;
 	int		nbytes_read;
 
 	nbytes_read = 1;
 	buf = malloc(sizeof(char) * (BUFFER_SIZE + 1));
+	// buf = (char *) ft_calloc(BUFFER_SIZE + 1, sizeof(char));
 	if (!buf)
 		return (NULL);
-	while (nbytes_read > 0 && !ft_strchr(bkm, '\n'))
+	while (nbytes_read != 0 && !ft_strchr(bkm, '\n'))
 	{
 		nbytes_read = read(fd, buf, BUFFER_SIZE);
-		if (nbytes_read == 0)
-			break ;
 		if (nbytes_read == -1)
 		{
 			free(buf);
 			return (NULL);
 		}
 		buf[nbytes_read] = '\0';
-		bkm = ft_strjoin(bkm, buf);
+		tmp = bkm;
+		if (tmp == NULL)
+			tmp = (char *) ft_calloc(1, sizeof(char));
+		bkm = ft_strjoin(tmp, buf);
+		free(tmp);
 	}
 	free(buf);
 	return (bkm);
