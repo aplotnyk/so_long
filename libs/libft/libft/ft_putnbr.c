@@ -6,11 +6,11 @@
 /*   By: aplotnyk <aplotnyk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 16:14:06 by aplotnyk          #+#    #+#             */
-/*   Updated: 2023/07/12 16:19:00 by aplotnyk         ###   ########.fr       */
+/*   Updated: 2024/03/06 16:27:26 by aplotnyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"ft_printf.h"
+#include "ft_printf.h"
 
 int	ft_putnbr(int i)
 {

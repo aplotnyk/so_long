@@ -6,7 +6,7 @@
 /*   By: aplotnyk <aplotnyk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 20:27:43 by aplotnyk          #+#    #+#             */
-/*   Updated: 2023/02/26 14:09:58 by aplotnyk         ###   ########.fr       */
+/*   Updated: 2024/03/06 16:29:24 by aplotnyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,6 @@ int	ft_atoi(char *str)
 	{
 		res = res * 10 + str[i] - '0';
 		i++;
-	}	
+	}
 	return (res * sign);
 }

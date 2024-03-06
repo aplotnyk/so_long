@@ -6,7 +6,7 @@
 /*   By: aplotnyk <aplotnyk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 18:28:18 by aplotnyk          #+#    #+#             */
-/*   Updated: 2024/02/25 20:14:25 by aplotnyk         ###   ########.fr       */
+/*   Updated: 2024/03/06 16:28:50 by aplotnyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,3 @@ char	*ft_strchr(const char *str, int ch)
 	else
 		return (NULL);
 }
-

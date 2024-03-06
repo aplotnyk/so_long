@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aplotnyk <aplotnyk@student.42prague.com    +#+  +:+       +#+        */
+/*   By: aplotnyk <aplotnyk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 16:21:45 by aplotnyk          #+#    #+#             */
-/*   Updated: 2024/02/29 13:55:35 by aplotnyk         ###   ########.fr       */
+/*   Updated: 2024/03/06 16:25:31 by aplotnyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,6 @@ char	*ft_strjoin(char *s1, char *s2)
 
 	i = 0;
 	j = 0;
-	// if (!s1)
-	// {
-	// 	s1 = malloc (sizeof(char) * 1);
-	// 	*s1 = '\0';
-	// }
 	result = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2)) + 1);
 	if (!result)
 		return (NULL);

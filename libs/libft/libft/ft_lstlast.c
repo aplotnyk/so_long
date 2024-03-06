@@ -6,11 +6,11 @@
 /*   By: aplotnyk <aplotnyk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 17:18:15 by aplotnyk          #+#    #+#             */
-/*   Updated: 2023/02/21 19:32:31 by aplotnyk         ###   ########.fr       */
+/*   Updated: 2024/03/06 16:28:35 by aplotnyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
 t_list	*ft_lstlast(t_list *lst)
 {

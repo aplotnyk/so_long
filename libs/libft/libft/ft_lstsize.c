@@ -6,14 +6,14 @@
 /*   By: aplotnyk <aplotnyk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 17:06:03 by aplotnyk          #+#    #+#             */
-/*   Updated: 2023/02/21 17:14:42 by aplotnyk         ###   ########.fr       */
+/*   Updated: 2024/03/06 16:29:43 by aplotnyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 int	ft_lstsize(t_list *lst)
-{	
+{
 	int	i;
 
 	i = 0;

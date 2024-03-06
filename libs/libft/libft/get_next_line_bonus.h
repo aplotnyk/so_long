@@ -6,7 +6,7 @@
 /*   By: aplotnyk <aplotnyk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 15:12:55 by aplotnyk          #+#    #+#             */
-/*   Updated: 2024/02/25 19:10:09 by aplotnyk         ###   ########.fr       */
+/*   Updated: 2024/03/06 16:33:01 by aplotnyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-#include"libft.h"
+# include "libft.h"
 
 char		*get_next_line(int fd);
 char		*detect_line(int fd, char *bkm);
